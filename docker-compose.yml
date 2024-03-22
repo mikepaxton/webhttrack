@@ -1,0 +1,13 @@
+services:
+  web:
+    image: eldekyfin/webhttrack
+    ports:
+      - 8110:8080
+    volumes:
+      - httrack:/root/websites
+    restart: unless-stopped
+volumes:
+  httrack:
+    driver: local-persist
+    driver_opts:
+      mountpoint: /data/httrack
