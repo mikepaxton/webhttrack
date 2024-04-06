@@ -1,6 +1,7 @@
 services:
   web:
     image: eldekyfin/webhttrack
+    container_name: web-htrrack
     ports:
       - 8110:8080
     volumes:
