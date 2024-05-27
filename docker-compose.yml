@@ -2,13 +2,9 @@ services:
   web:
     image: eldekyfin/webhttrack
     container_name: web-htrrack
+    network_mode: bridge
     ports:
-      - 8110:8080
+      - 8120:8080
     volumes:
-      - httrack:/root/websites
+      - /mnt/cyberserver/www/html/httrack:/root/websites
     restart: unless-stopped
-volumes:
-  httrack:
-    driver: local-persist
-    driver_opts:
-      mountpoint: /data/httrack
